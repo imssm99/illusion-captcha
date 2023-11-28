@@ -31,10 +31,11 @@ class BaseIllusion:
         """
         return (int(self.size[0] * coord_rel[0]), int(self.size[1] * coord_rel[1]))
 
-    def get_thickness(self, thickness_rel):
+    def get_thickness(self, thickness_rel, radius_rel):
         """
         get real thickness from relative thickness
         :thickness_rel: relative thickness
+        :thickness_rel: relative radius
         :return: real thickness
         """
         if thickness_rel > 0:
@@ -54,17 +55,17 @@ class BaseIllusion:
 
     def draw_circle_relative(self, canvas, coord_rel, radius_rel, color, thickness_rel, **kwargs):
         radius = self.convert_relative(radius_rel)
-        cv.circle(canvas, self.get_coord(coord_rel), radius, color, self.get_thickness(thickness_rel), **kwargs)
+        cv.circle(canvas, self.get_coord(coord_rel), radius, color, self.get_thickness(thickness_rel, radius_rel), **kwargs)
 
     def draw_rectangle_relative(self, canvas, coord_rel, radius_rel, color, thickness_rel, **kwargs):
         coord = self.get_coord(coord_rel)
         radius = self.convert_relative(radius_rel)
         pt1 = (coord[0] - radius, coord[1] - radius)
         pt2 = (coord[0] + radius, coord[1] + radius)
-        cv.rectangle(canvas, pt1, pt2, color, self.get_thickness(thickness_rel), **kwargs)
+        cv.rectangle(canvas, pt1, pt2, color, self.get_thickness(thickness_rel, radius_rel), **kwargs)
 
     def draw_line_relative(self, canvas, coord_rel1, coord_rel2, color, thickness_rel, **kwargs):
-        cv.line(canvas, self.get_coord(coord_rel1), self.get_coord(coord_rel2), color, self.get_thickness(thickness_rel), **kwargs)
+        cv.line(canvas, self.get_coord(coord_rel1), self.get_coord(coord_rel2), color, self.convert_relative(thickness_rel), **kwargs)
 
     def draw_relative(self, shape, *args):
         match shape:

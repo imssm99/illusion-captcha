@@ -2,7 +2,7 @@ from BaseIllusion import *
 import numpy as np
 import cv2 as cv
 
-class DelboeufIllusion(BaseIllusion):
+class Delboeuf(BaseIllusion):
     def __init__(self, size, shape):
         super().__init__(size)
 
@@ -19,5 +19,5 @@ class DelboeufIllusion(BaseIllusion):
         self.draw_relative(shape, self.canvas[self.WRONG], (0.5, 0.5), 0.4, color[1], 0.01)
 
 if __name__ == "__main__":
-    illusion = DelboeufIllusion((400, 400), Shape.CIRCLE)
+    illusion = Delboeuf((400, 400), Shape.CIRCLE)
     illusion.show()

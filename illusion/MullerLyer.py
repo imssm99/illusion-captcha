@@ -1,6 +1,4 @@
 from BaseIllusion import *
-import numpy as np
-import cv2 as cv
 
 class MullerLyer(BaseIllusion):
     def __init__(self, size):
@@ -30,3 +28,4 @@ class MullerLyer(BaseIllusion):
 if __name__ == "__main__":
     illusion = MullerLyer((400, 400))
     illusion.show()
+    

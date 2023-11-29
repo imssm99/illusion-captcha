@@ -1,6 +1,5 @@
 from BaseIllusion import *
 import numpy as np
-import cv2 as cv
 import colorsys
 
 class Contrast(BaseIllusion):
@@ -29,3 +28,4 @@ class Contrast(BaseIllusion):
 if __name__ == "__main__":
     illusion = Contrast((400, 400), Shape.CIRCLE)
     illusion.show()
+    

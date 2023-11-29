@@ -1,6 +1,4 @@
 from BaseIllusion import *
-import numpy as np
-import cv2 as cv
 
 class Ponzo(BaseIllusion):
     def __init__(self, size):
@@ -26,3 +24,4 @@ class Ponzo(BaseIllusion):
 if __name__ == "__main__":
     illusion = Ponzo((400, 400))
     illusion.show()
+    

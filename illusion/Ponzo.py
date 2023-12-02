@@ -1,4 +1,4 @@
-from BaseIllusion import *
+from .BaseIllusion import *
 
 class Ponzo(BaseIllusion):
     def __init__(self, size):
@@ -24,4 +24,3 @@ class Ponzo(BaseIllusion):
 if __name__ == "__main__":
     illusion = Ponzo((400, 400))
     illusion.show()
-    

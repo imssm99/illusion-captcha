@@ -1,4 +1,4 @@
-from BaseIllusion import *
+from .BaseIllusion import *
 import numpy as np
 
 class Ebbinghaus(BaseIllusion):

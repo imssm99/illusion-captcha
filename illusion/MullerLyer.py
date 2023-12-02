@@ -1,4 +1,4 @@
-from BaseIllusion import *
+from .BaseIllusion import *
 
 class MullerLyer(BaseIllusion):
     def __init__(self, size):

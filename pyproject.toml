@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.11"
 opencv-python = "^4.8.1.78"
 fastapi = {extras = ["all"], version = "^0.104.1"}
+requests = "^2.31.0"
 
 
 [build-system]

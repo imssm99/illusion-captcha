@@ -1,10 +1,13 @@
 from .BaseIllusion import *
 
 class Ponzo(BaseIllusion):
-    def __init__(self, size):
+    shapes = [Shape.LINE]
+
+    def __init__(self, size, shape):
         super().__init__(size)
 
-        self.question = f"Which line looks longer?"
+        assert shape in self.shapes
+        self.question = f"Which {shape} looks longer?"
         self.generate()
 
     def generate(self):

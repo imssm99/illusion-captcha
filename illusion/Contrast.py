@@ -3,9 +3,12 @@ import numpy as np
 import colorsys
 
 class Contrast(BaseIllusion):
+    shapes = [Shape.CIRCLE, Shape.RECTANGLE]
+
     def __init__(self, size, shape):
         super().__init__(size)
 
+        assert shape in self.shapes
         self.question = f"Which centered {shape} looks brighter?"
         self.generate(shape)
 

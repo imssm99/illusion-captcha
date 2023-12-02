@@ -2,10 +2,13 @@ from .BaseIllusion import *
 import numpy as np
 
 class Ebbinghaus(BaseIllusion):
-    def __init__(self, size):
+    shapes = [Shape.CIRCLE]
+
+    def __init__(self, size, shape):
         super().__init__(size)
 
-        self.question = f"Which inner circle looks bigger?"
+        assert shape in self.shapes
+        self.question = f"Which inner {shape} looks bigger?"
         self.generate()
 
     def generate(self):

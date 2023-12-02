@@ -1,7 +1,8 @@
 import numpy as np
 import cv2 as cv
+from enum import StrEnum
 
-class Shape:
+class Shape(StrEnum):
     RECTANGLE = "rectangle"
     CIRCLE = "circle"
     LINE = "line"
@@ -81,6 +82,10 @@ class BaseIllusion:
 
     def get_random_color(self):
         return [np.random.randint(0, 256) for _ in range(3)]
+
+    def get_image(self, idx):
+        _, buf = cv.imencode(".png", self.canvas[idx])
+        return buf
 
     def show(self):
         print(self.question)

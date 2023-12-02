@@ -1,9 +1,12 @@
 from .BaseIllusion import *
 
 class Delboeuf(BaseIllusion):
+    shapes = [Shape.CIRCLE, Shape.RECTANGLE]
+
     def __init__(self, size, shape):
         super().__init__(size)
 
+        assert shape in self.shapes
         self.question = f"Which inner {shape} looks bigger?"
         self.generate(shape)
 

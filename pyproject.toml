@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "illusion-captcha"
+version = "0.1.0"
+description = ""
+authors = ["imssm99 <imssm99@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+opencv-python = "^4.8.1.78"
+fastapi = {extras = ["all"], version = "^0.104.1"}
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -112,6 +112,10 @@ Optical Illusion is an illusion caused by the visual system and characterized by
 - Implement more optical illusions
 - Add post processing (image filters)
 
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
 ## Dependencies
 
 - [FastAPI](https://fastapi.tiangolo.com/) for api server

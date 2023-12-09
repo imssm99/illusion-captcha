@@ -1,12 +1,19 @@
 import numpy as np
 import cv2 as cv
-from enum import StrEnum
 import random
 
-class Shape(StrEnum):
-    RECTANGLE = "rectangle"
-    CIRCLE = "circle"
-    LINE = "line"
+try:
+    from enum import StrEnum
+    class Shape(StrEnum):
+        RECTANGLE = "rectangle"
+        CIRCLE = "circle"
+        LINE = "line"
+except:
+    from enum import Enum
+    class Shape(str, Enum):
+        RECTANGLE = "rectangle"
+        CIRCLE = "circle"
+        LINE = "line"
 
 class BaseIllusion:
     question = ""

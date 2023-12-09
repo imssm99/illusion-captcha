@@ -52,15 +52,29 @@ Illusions are generated dynamically and randomly with OpenCV.
 
 ### Multiple Shapes
 
+- Delboeuf, simulaneous contrast can generate circle or rectangle
+
 |circle|rectangle|
 |-|-|
 |![delboeuf_circle](./assets/delboeuf_circle.png)|![delboeuf_rect](./assets/delboeuf_rect.png)|
 
 ### Number of Images
 
+- Currently it generates 2~4 images in delboeuf, ebbinghaus, simulaneous contrast
+- Other illusions generate 2 images
+
 |2|4|
 |-|-|
 |![ebbinghaus_2](./assets/ebbinghaus_2.png)|![ebbinghaus_4](./assets/ebbinghaus_4.png)|
+
+### Random Colors
+
+- Randomize colors
+- In simulaneous contrast, generate color in HSV and adjust value (brightness)
+
+| | |
+|-|-|
+|![contrast1](./assets/illusion_captcha.png)|![contrast2](./assets/illusion_captcha2.png)|
 
 ### Logic
 

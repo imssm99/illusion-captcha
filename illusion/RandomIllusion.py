@@ -9,7 +9,15 @@ import random
 def getRandomIllusion(size):
     illusion_class = random.choice([Contrast, Delboeuf, Ebbinghaus, MullerLyer, Ponzo])
     shape = random.choice(illusion_class.shapes)
-    return illusion_class(size, shape)
+
+    if illusion_class in [Contrast, Delboeuf, Ebbinghaus]:
+        illusion = illusion_class(size, shape, random.randint(2, 4))
+        illusion.shuffle_canvas()
+        return illusion
+    
+    illusion = illusion_class(size, shape)
+    illusion.shuffle_canvas()
+    return illusion
 
 if __name__ == "__main__":
     illusion = getRandomIllusion((300, 300))

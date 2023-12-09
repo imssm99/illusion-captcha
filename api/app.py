@@ -27,7 +27,7 @@ def init(size: int):
     illusion = getRandomIllusion((size, size))
     token = str(uuid.uuid4())
     db[token] = illusion
-    return {"token": token, "question": illusion.question, "len": len(illusion.canvas)}
+    return {"token": token, "question": illusion.question, "len": illusion.n}
 
 @app.get("/image/{idx}")
 def get_image(idx: int, token: str):

@@ -1,6 +1,7 @@
 import numpy as np
 import cv2 as cv
 from enum import StrEnum
+import random
 
 class Shape(StrEnum):
     RECTANGLE = "rectangle"
@@ -9,14 +10,12 @@ class Shape(StrEnum):
 
 class BaseIllusion:
     question = ""
-    WRONG = 0
-    CORRECT = 1
+    answer = 0
 
-    def __init__(self, size, random=True):
+    def __init__(self, size, n=2):
         self.size = size
-        if random:
-            self.WRONG, self.CORRECT = np.random.choice([0, 1], 2, False)
-        self.canvas = [np.full((size[0], size[1], 3), 255, dtype=np.uint8) for _ in range(2)]
+        self.n = n
+        self.canvas = [np.full((size[0], size[1], 3), 255, dtype=np.uint8) for _ in range(n)]
 
     def filter(self):
         pass
@@ -77,8 +76,15 @@ class BaseIllusion:
             case Shape.LINE:
                 self.draw_line_relative(*args)
 
+    def shuffle_canvas(self):
+        x = list(enumerate(self.canvas))
+        random.shuffle(x)
+        indice, canvas = zip(*x)
+        self.canvas = canvas
+        self.answer = indice.index(self.answer)
+
     def check_answer(self, answer):
-        return answer == self.CORRECT
+        return self.answer == answer
 
     def get_random_color(self):
         return [np.random.randint(0, 256) for _ in range(3)]
@@ -89,6 +95,6 @@ class BaseIllusion:
 
     def show(self):
         print(self.question)
-        print(self.CORRECT)
-        cv.imshow("Debug", cv.hconcat([self.canvas[0], self.canvas[1]]))
+        print(self.answer)
+        cv.imshow("Debug", cv.hconcat(self.canvas))
         cv.waitKey(0)

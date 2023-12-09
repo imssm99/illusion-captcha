@@ -11,7 +11,7 @@ class Contrast(BaseIllusion):
         super().__init__(size, n)
 
         assert shape in self.shapes
-        self.question = f"Which centered {shape} looks darker?"
+        self.question = f"Which centered {shape} looks {'darker' if self.n == 2 else 'darkest'}?"
         self.generate(shape)
 
     def generate(self, shape):

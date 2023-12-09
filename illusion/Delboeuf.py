@@ -7,7 +7,7 @@ class Delboeuf(BaseIllusion):
         super().__init__(size, n)
 
         assert shape in self.shapes
-        self.question = f"Which inner {shape} looks bigger?"
+        self.question = f"Which inner {shape} looks {'larger' if self.n == 2 else 'largest'}?"
         self.generate(shape)
 
     def generate(self, shape):

@@ -102,6 +102,7 @@ Optical Illusion is an illusion caused by the visual system and characterized by
 
 - [FastAPI](https://fastapi.tiangolo.com/) for api server
 - [OpenCV](https://opencv.org) for generating illusion images
+- [NumPy](https://numpy.org) for numerical operations
 
 ## References
 - [What is CAPTCHA?](https://support.google.com/a/answer/1217728?hl=en)
